@@ -7,7 +7,21 @@
 
 <h2 id="zhen">Chinese-to-English Translation</h2>
 <canvas id="canvas_zhen" width="1500" height="980" style="border:0px solid #d3d3d3;">Your browser does not support the HTML5 canvas tag.</canvas>
-<script>var c = document.getElementById("canvas_zhen");var ctx = c.getContext("2d");ctx.beginPath();ctx.lineWidth = "1";ctx.strokeStyle = "black";
+<script>var c = document.getElementById("canvas_zhen");var ctx = c.getContext("2d");
+// get current size of the canvas
+let rect = c.getBoundingClientRect();
+
+// increase the actual size of our canvas
+c.width = rect.width * devicePixelRatio;
+c.height = rect.height * devicePixelRatio;
+
+// ensure all drawing operations are scaled
+ctx.scale(devicePixelRatio, devicePixelRatio);
+
+// scale everything down using CSS
+c.style.width = rect.width + 'px';
+c.style.height = rect.height + 'px';
+ctx.beginPath();ctx.lineWidth = "1";ctx.strokeStyle = "black";
 ctx.font = "12px Arial";ctx.fillStyle = "black";ctx.textAlign = "center";ctx.fillText("Time", 0.00+(168.00)/2, 0.00+(36.00/2)+5);
 ctx.rect(168.000, 27.000, 0.000, 9.000);ctx.stroke();
 ctx.font = "12px Arial";ctx.fillStyle = "black";ctx.textAlign = "center";ctx.fillText("0 s", 168.00+(0.00)/2, 0.00+(36.00/2)+5);
@@ -1155,7 +1169,23 @@ ctx.font = "11px Arial";ctx.fillStyle = "black";ctx.textAlign = "center";ctx.fil
 
 <h2 id="enzh">English-to-Chinese Translation</h2>
 <canvas id="canvas_enzh" width="1500" height="800" style="border:0px solid #d3d3d3;">Your browser does not support the HTML5 canvas tag.</canvas>
-<script>var c = document.getElementById("canvas_enzh");var ctx = c.getContext("2d");ctx.beginPath();ctx.lineWidth = "1";ctx.strokeStyle = "black";
+<script>var c = document.getElementById("canvas_enzh");var ctx = c.getContext("2d");
+
+// get current size of the canvas
+rect = c.getBoundingClientRect();
+
+// increase the actual size of our canvas
+c.width = rect.width * devicePixelRatio;
+c.height = rect.height * devicePixelRatio;
+
+// ensure all drawing operations are scaled
+ctx.scale(devicePixelRatio, devicePixelRatio);
+
+// scale everything down using CSS
+c.style.width = rect.width + 'px';
+c.style.height = rect.height + 'px';
+
+ctx.beginPath();ctx.lineWidth = "1";ctx.strokeStyle = "black";
 ctx.font = "12px Arial";ctx.fillStyle = "black";ctx.textAlign = "center";ctx.fillText("Time", 0.00+(168.00)/2, 0.00+(36.00/2)+5);
 ctx.rect(168.000, 27.000, 0.000, 9.000);ctx.stroke();
 ctx.font = "12px Arial";ctx.fillStyle = "black";ctx.textAlign = "center";ctx.fillText("0 s", 168.00+(0.00)/2, 0.00+(36.00/2)+5);
